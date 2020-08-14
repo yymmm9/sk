@@ -203,7 +203,7 @@ main {
   position: absolute;
   width: 100vw;
   opacity: 1;
-  filter: url("#nss");
+  /* filter: url("#nss"); */
 }
 
 .turbulence {
