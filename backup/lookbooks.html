@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="minimal-ui, width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes"
+    />
+
+    <title>Sia Karati | Lookbooks</title>
+
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/lookbooks.css" />
+  </head>
+
+  <body>
+    <header id="header"></header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <div class="viewport">
+		
+            <div class="scene3D-container">	
+                <div class="scene3D">
+          <div class="scroll collection__item _1 onhover rotatex">
+            <a href="./love-drug.html"></a>
+          </div>
+
+          <div class="scroll collection__item _2 onhover rotatex">
+            <a href="./the-cure.html"></a>
+          </div>
+
+          <div class="scroll collection__item _3 onhover rotatex">
+            <a href="./essence.html"></a>
+          </div>
+
+          <div class="scroll collection__item _4 onhover rotatex">
+            <a href="./erosion.html"></a>
+          </div>
+
+          <div class="scroll collection__item _5 onhover rotatex">
+            <a href="./la-vie-de-barbie.html"></a>
+          </div>
+
+          <div class="scroll collection__item _6 onhover rotatex">
+            <a href="./cross-collaborations.html"></a>
+          </div>
+          <div class="scroll collection__item _7 onhover rotatex">
+            <a href="./discovery.html"></a>
+          </div>
+
+          <div class="scroll collection__item _8 onhover rotatex">
+            <a href="./marse-2020.html"></a>
+          </div>
+
+          <div class="scroll collection__item _9 onhover rotatex">
+            <a href="./frontier.html"></a>
+          </div>
+
+          <div class="scroll collection__item _10 onhover rotatex">
+            <a href="./poppy-love.html"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+      </div>
+    </main>
+
+    <!-- <filter id="luminance" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+      <feColorMatrix type="luminanceToAlpha" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" result="colormatrix"/>
+    </filter>
+
+    <style>
+      .lenti{
+        filter: url(#luminance);
+      }
+    </style> -->
+
+    <script src="./src/essentials.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"
+      integrity="sha256-XDWrid8aGX+NZwSY7JzTu6oWArI71Sw+aUZ9Hd0P5mo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./src/index.js"></script>
+    
+    <script>
+      function yetReady() {
+        alert("还没链接.. ☃️");
+
+        return true;
+      }
+
+      let films = [];
+
+const perspectiveOrigin = {
+  x: parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue(
+      "--scenePerspectiveOriginX"
+    )
+  ),
+  y: parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue(
+      "--scenePerspectiveOriginY"
+    )
+  ),
+  maxGap: 10
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+  
+      window.addEventListener("scroll", moveCamera);
+      window.addEventListener("mousemove", moveCameraAngle);
+      setSceneHeight();
+   
+});
+function moveCamera() {
+  document.documentElement.style.setProperty("--cameraZ", window.pageYOffset);
+}
+
+function setSceneHeight() {
+  const numberOfItems = document.querySelectorAll('.scene3D div').length;
+  const itemZ = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue("--itemZ")
+  );
+  const scenePerspective = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue(
+      "--scenePerspective"
+    )
+  );
+  const cameraSpeed = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue("--cameraSpeed")
+  );
+
+  const height =
+    window.innerHeight +
+    scenePerspective * cameraSpeed +
+    itemZ * cameraSpeed * numberOfItems;
+
+  document.documentElement.style.setProperty("--viewportHeight", height);
+}
+
+function moveCameraAngle(event) {
+  const xGap =
+    (((event.clientX - window.innerWidth / 2) * 1000) /
+      (window.innerWidth / 2)) *
+    -1;
+  const yGap =
+    (((event.clientY - window.innerHeight / 2) * 400) /
+      (window.innerHeight / 2)) *
+    -1;
+  const newPerspectiveOriginX =
+    perspectiveOrigin.x + (xGap * perspectiveOrigin.maxGap) / 100;
+  const newPerspectiveOriginY =
+    perspectiveOrigin.y + (yGap * perspectiveOrigin.maxGap) / 100;
+
+  document.documentElement.style.setProperty(
+    "--scenePerspectiveOriginX",
+    newPerspectiveOriginX
+  );
+  document.documentElement.style.setProperty(
+    "--scenePerspectiveOriginY",
+    newPerspectiveOriginY
+  );
+}
+
+    </script>
+  </body>
+</html>

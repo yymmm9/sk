@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="minimal-ui, width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes"
+    />
+
+    <title>Sia Karati | Collection</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script src="/src/index.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <svg style="position: fixed; left: 0;" width="100%" height="100%">
+      <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence
+          baseFrequency="0.07"
+          result="NOISE"
+          numOctaves="4"
+          seed="17"
+          id="turbulence"
+        />
+
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="NOISE"
+          scale="-12"
+          result="displacementMap"
+        ></feDisplacementMap>
+
+        <feColorMatrix
+          id="saturation"
+          type="saturate"
+          values="0"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+          in="displacementMap"
+          result="colormatrix1"
+        />
+
+        <!-- <animate
+          xlink:href="#turbulence"
+          attributeName="baseFrequency"
+          dur="4s"
+          values="0.007 0.07;
+                     0.08 0.06;
+                     0.00 0.00"
+          keySplines="
+                         .52 .02 .62 .99;
+                         .52 .02 .62 .99"
+          keyTimes="
+                       0;0.5;1"
+          calcMode="spline"
+          repeatCount="0"
+        />
+        <animate
+          xlink:href="#saturation"
+          attributeName="values"
+          dur="4s"
+          values="0;
+          0.3;
+          1"
+          keySplines="
+                         .52 .02 .62 .99;
+                         .52 .02 .62 .99"
+          keyTimes="
+                       0;0.5;1"
+          calcMode="spline"
+          repeatCount="0"
+        /> -->
+      </filter>
+    </svg>
+
+    <script>
+      let el = document.getElementById("turbulence");
+
+      let sat = document.getElementById("saturation");
+
+      gsap.to(el, {
+        duration: 4,
+        ease: Power3.easeOut,
+        attr: { numOctaves: 0, baseFrequency: 0 },
+        snap: {
+          numOctaves: 0.01
+        }
+      });
+      gsap.to(sat, {
+        duration: 2,
+        delay: 2,
+        ease: Power3.easeOut,
+        attr: { values: 1 },
+        snap: {
+          values: 0.1
+        }
+      });
+    </script>
+    <header>
+      <div class="brrrand">
+        <a href="/index.html">
+          <svg
+            width="207"
+            height="207"
+            viewBox="0 0 207 207"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M43.5999 104.3C39.0999 100.6 36.7999 95.9 36.7999 90.1C36.7999 77.2 44.1999 70.7 58.9999 70.7C69.8999 70.7 78.7999 74.2 85.7999 81.2L94.9999 73.2C85.0999 63.3 73.0999 58.4 58.9999 58.4C48.6999 58.4 40.3999 61.6 34.0999 68C27.4999 74.2 24.2 81.5 24.2 90.2C24.2 99.9 27.2999 107.4 33.3999 112.7H61.2C53.2 109.9 47.2999 107.2 43.5999 104.3Z"
+            />
+            <path
+              d="M89.2 136.7C89.2 153.1 79.5 161.3 60.3 161.3C51.5 161.3 44.5 159.4 39.4 155.5C34.5 152 30.3 147.1 26.8 140.7L16 147.2C25.9 165.1 40.6 174 60.3 174C71.8 174 81.6 170.5 89.9 163.5C97.9 156.7 101.9 147.8 101.9 136.7C101.9 130.1 100.4 124.2 97.4 119.1H80.5C86.3 124.2 89.2 130 89.2 136.7Z"
+            />
+            <path
+              d="M184.3 58.4H166.5L114.4 110.1V32H101.8V112.6H129.8L184.3 58.4Z"
+            />
+            <path d="M114.4 119.1H101.8V173.6H114.4V119.1Z" />
+            <path d="M190.3 173.6H206.9L152.3 119.1H135.4L190.3 173.6Z" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="button_container" id="toggle">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </div>
+    </header>
+
+    <div class="overlay" id="overlay">
+      <nav class="overlay-menu">
+        <ul>
+          <li><a href="/">新品系列</a></li>
+          <li><a href="/">男士专区</a></li>
+          <li><a href="/">女士专区</a></li>
+        </ul>
+        <ul class="fex">
+          <li>
+            <a href="/boutique.html"
+              ><svg
+                t="1590562396902"
+                class="icon"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="1195"
+              >
+                <path
+                  d="M512 584.533333c-36.266667 0-70.4-10.666667-102.4-34.133333-36.266667-27.733333-61.866667-66.133333-68.266667-113.066667-6.4-44.8 4.266667-89.6 32-128 55.466667-76.8 164.266667-91.733333 238.933334-36.266666 36.266667 27.733333 61.866667 66.133333 68.266666 113.066666 6.4 44.8-4.266667 89.6-32 128-32 46.933333-83.2 70.4-136.533333 70.4z m0-277.333333c-32 0-66.133333 14.933333-87.466667 42.666667-17.066667 23.466667-23.466667 51.2-19.2 78.933333s19.2 53.333333 42.666667 70.4c46.933333 34.133333 115.2 25.6 149.333333-23.466667 17.066667-23.466667 23.466667-51.2 19.2-78.933333s-19.2-53.333333-42.666666-70.4c-17.066667-12.8-40.533333-19.2-61.866667-19.2z"
+                  p-id="1196"
+                ></path>
+                <path
+                  d="M514.133333 987.733333c-38.4 0-76.8-17.066667-106.666666-49.066666-106.666667-108.8-262.4-341.333333-262.4-524.8C145.066667 211.2 309.333333 46.933333 512 46.933333s366.933333 164.266667 366.933333 366.933334c0 155.733333-155.733333 405.333333-262.4 524.8-27.733333 32-64 49.066667-102.4 49.066666 2.133333 0 0 0 0 0zM512 110.933333c-166.4 0-302.933333 136.533333-302.933333 302.933334 0 147.2 125.866667 358.4 245.333333 482.133333 19.2 19.2 40.533333 29.866667 61.866667 29.866667 19.2 0 38.4-10.666667 55.466666-27.733334 115.2-132.266667 245.333333-362.666667 245.333334-482.133333-2.133333-170.666667-138.666667-305.066667-305.066667-305.066667z"
+                  p-id="1197"
+                ></path></svg
+              >实体店</a
+            >
+          </li>
+          <li><a href="">语言与地区</a></li>
+          <li>
+            <a href="./help.html"
+              ><svg
+                class="icon"
+                viewBox="0 0 200 200"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M99.9993 191.25C50.416 191.25 10.416 151.25 10.416 101.666C10.416 52.083 50.416 12.083 99.9993 12.083C149.583 12.083 189.583 52.083 189.583 101.666C189.583 151.25 149.583 191.25 99.9993 191.25ZM99.9993 24.583C57.4993 24.583 22.916 59.1663 22.916 101.666C22.916 144.166 57.4993 178.75 99.9993 178.75C142.499 178.75 177.083 144.166 177.083 101.666C177.083 59.1663 142.499 24.583 99.9993 24.583Z"
+                  fill="black"
+                />
+                <path
+                  d="M92.125 82.7539H107.75V154H92.125V82.7539ZM100 71.013C97.1667 71.013 94.7917 70.079 92.875 68.2111C90.9583 66.2543 90 63.8528 90 61.0065C90 58.1602 90.9583 55.8031 92.875 53.9352C94.7917 51.9784 97.1667 51 100 51C102.833 51 105.208 51.9339 107.125 53.8018C109.042 55.5807 110 57.8489 110 60.6062C110 63.5414 109.042 66.0319 107.125 68.0777C105.292 70.0345 102.917 71.013 100 71.013Z"
+                  fill="black"
+                />
+              </svg>
+              需要帮助？</a
+            >
+          </li>
+          <li>
+            <a href="tel:393319485188"
+              ><svg
+                t="1590562740411"
+                class="icon"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="1455"
+              >
+                <path
+                  d="M829.866667 942.933333c-4.266667 0-8.533333 0-12.8-2.133333l-93.866667-42.666667c-72.533333-34.133333-145.066667-49.066667-215.466667-46.933333-25.6 0-51.2 0-76.8-4.266667-110.933333-17.066667-209.066667-83.2-268.8-177.066666-61.866667-96-78.933333-209.066667-46.933333-320 49.066667-177.066667 217.6-298.666667 398.933333-288 113.066667 6.4 219.733333 59.733333 290.133334 147.2 70.4 87.466667 100.266667 202.666667 83.2 313.6-2.133333 14.933333-6.4 29.866667-10.666667 44.8-23.466667 83.2-29.866667 179.2-21.333333 281.6l6.4 66.133333c2.133333 10.666667-4.266667 23.466667-12.8 29.866667-6.4-4.266667-12.8-2.133333-19.2-2.133334z m-311.466667-157.866666c74.666667 0 151.466667 17.066667 230.4 53.333333l42.666667 19.2v-10.666667c-10.666667-110.933333-4.266667-213.333333 23.466666-305.066666 4.266667-12.8 6.4-25.6 8.533334-38.4 14.933333-93.866667-10.666667-187.733333-70.4-262.4s-147.2-117.333333-243.2-123.733334C356.266667 113.066667 215.466667 215.466667 174.933333 362.666667c-25.6 93.866667-10.666667 187.733333 40.533334 268.8 51.2 78.933333 132.266667 134.4 226.133333 149.333333 21.333333 4.266667 42.666667 4.266667 64 4.266667h12.8z"
+                  p-id="1456"
+                ></path>
+                <path
+                  d="M588.8 294.4c-19.2-17.066667-46.933333-27.733333-78.933333-27.733333-36.266667 0-66.133333 10.666667-87.466667 32-14.933333 14.933333-23.466667 32-27.733333 55.466666-2.133333 8.533333 0 19.2 6.4 25.6 6.4 6.4 14.933333 10.666667 23.466666 10.666667 14.933333 0 27.733333-10.666667 29.866667-25.6 2.133333-10.666667 4.266667-19.2 10.666667-25.6 8.533333-12.8 23.466667-19.2 42.666666-19.2 17.066667 0 27.733333 4.266667 36.266667 12.8 8.533333 8.533333 12.8 21.333333 12.8 36.266667 0 10.666667-4.266667 21.333333-12.8 32l-8.533333 8.533333c-32 27.733333-49.066667 46.933333-55.466667 61.866667-6.4 12.8-10.666667 29.866667-10.666667 49.066666v12.8h61.866667v-12.8c0-10.666667 2.133333-21.333333 6.4-29.866666 4.266667-8.533333 10.666667-17.066667 19.2-23.466667 23.466667-21.333333 36.266667-32 40.533333-38.4 12.8-17.066667 19.2-38.4 19.2-61.866667 2.133333-29.866667-8.533333-55.466667-27.733333-72.533333zM501.333333 586.666667c-12.8 0-21.333333 4.266667-27.733333 10.666666-8.533333 6.4-12.8 17.066667-12.8 27.733334s4.266667 21.333333 10.666667 27.733333c8.533333 8.533333 17.066667 10.666667 29.866666 10.666667 10.666667 0 21.333333-4.266667 29.866667-10.666667 8.533333-8.533333 12.8-17.066667 12.8-29.866667 0-12.8-4.266667-21.333333-12.8-27.733333-8.533333-4.266667-17.066667-8.533333-29.866667-8.533333z"
+                  p-id="1457"
+                ></path>
+                <path
+                  d="M469.333333 533.333333a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z"
+                  p-id="1458"
+                ></path></svg
+              >+39 331 948 5188</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <div class="intro" style="">
+        <div
+          class="turbulence"
+          style="-webkit-filter: url(#noise);filter: url(#noise);"
+        >
+          <div
+            class="intro__img"
+            style="background-image: url('/mat/marse-2020b.jpg');
+          background-size: 100%;
+          transform: rotate(180deg);"
+          ></div>
+        </div>
+        <h1 class="intro__number">Collection #7</h1>
+        <h1 class="intro__title">Marse-2020</h1>
+        <p class="intro__sd">
+          “We are the voyagers fof starship Marse-2020, our on going mission is
+          to explore strange new world.”
+        </p>
+      </div>
+
+      <div class="content grid">
+        <div class="grid__item wide">
+          <div class="item__img">
+            <img src="/mat/marse-1.jpg" alt="" />
+            <img src="/mat/marse-2.jpg" alt="" />
+          </div>
+          <h2 class="item__title">MARSE-2020</h2>
+          <p class="item__sd">18K GOLD AKOYA PEARL PENDANT</p>
+          <span class="item__note">¥3100</span>
+        </div>
+
+        <div class="grid__item">
+          <div class="item__img">
+            <img src="/mat/marse-2.jpg" alt="" />
+          </div>
+          <h2 class="item__title">MARSE-2020</h2>
+          <p class="item__sd">18K GOLD AKOYA PEARL PENDANT</p>
+          <span class="item__note">¥3100</span>
+        </div>
+
+        <div class="grid__item">
+          <div class="item__img">
+            <img src="/mat/marse-1.jpg" alt="" />
+          </div>
+          <h2 class="item__title">MARSE-2020</h2>
+          <p class="item__sd">18K GOLD AKOYA PEARL PENDANT</p>
+          <span class="item__note">¥3100</span>
+        </div>
+
+        <div class="grid__item cover">
+          <div class="cover__img"></div>
+          <div class="cover__img"></div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="logo-wrapper">
+          <svg
+            id="logo"
+            width="207"
+            height="207"
+            viewBox="0 0 207 207"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M43.5999 104.3C39.0999 100.6 36.7999 95.9 36.7999 90.1C36.7999 77.2 44.1999 70.7 58.9999 70.7C69.8999 70.7 78.7999 74.2 85.7999 81.2L94.9999 73.2C85.0999 63.3 73.0999 58.4 58.9999 58.4C48.6999 58.4 40.3999 61.6 34.0999 68C27.4999 74.2 24.2 81.5 24.2 90.2C24.2 99.9 27.2999 107.4 33.3999 112.7H61.2C53.2 109.9 47.2999 107.2 43.5999 104.3Z"
+            />
+            <path
+              d="M89.2 136.7C89.2 153.1 79.5 161.3 60.3 161.3C51.5 161.3 44.5 159.4 39.4 155.5C34.5 152 30.3 147.1 26.8 140.7L16 147.2C25.9 165.1 40.6 174 60.3 174C71.8 174 81.6 170.5 89.9 163.5C97.9 156.7 101.9 147.8 101.9 136.7C101.9 130.1 100.4 124.2 97.4 119.1H80.5C86.3 124.2 89.2 130 89.2 136.7Z"
+            />
+            <path
+              d="M184.3 58.4H166.5L114.4 110.1V32H101.8V112.6H129.8L184.3 58.4Z"
+            />
+            <path d="M114.4 119.1H101.8V173.6H114.4V119.1Z" />
+            <path d="M190.3 173.6H206.9L152.3 119.1H135.4L190.3 173.6Z" />
+          </svg>
+        </div>
+        <div class="flex-c">
+          <a href="/about-us.html">关于我们</a>
+          <a href="/term-conditions.html">服务条款</a>
+          <a href="/privacy-policy.html">隐私政策</a>
+          <a href="/return.html">退换服务</a>
+          <a href="/shipping.html">邮寄费用</a>
+        </div>
+
+        <div class="flex-c">
+          <a href="/contact.html">微信公众号</a>
+          <a href="/contact.html">抖音视频</a>
+          <a href="/contact.html">快手视频</a>
+          <a href="/contact.html">西瓜视频</a>
+        </div>
+        <p>©2020 Sia Karati</p>
+      </footer>
+    </main>
+
+    <style>
+      /*.intro {
+        background: #d5d1c6;
+      }*/
+      .content {
+        background: #efebe8;
+      }
+      .cover__img:nth-child(1) {
+        background-image: url(/mat/marse-2020b.jpg);
+      }
+      .cover__img:nth-child(2) {
+        background-image: url(/mat/marse-2020b.jpg);
+      }
+    </style>
+  </body>
+</html>
