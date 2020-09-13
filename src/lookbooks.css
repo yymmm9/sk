@@ -107,3 +107,9 @@
 footer {
       padding: 0 12px;
     }
+
+    footer {
+    text-align: left;
+    margin: auto!important;
+    width: fit-content!important;
+  }

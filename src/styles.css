@@ -558,9 +558,9 @@ header {
     height: 100%;
   }
 
-  .opened,
+  /* .opened,
   .opened svg {
-  }
+  } */
 
   .bopened {
     background: #19110b;
@@ -574,12 +574,14 @@ header {
     text-align: left;
   }
 
+}
+
   @media only screen and (max-width: 768px) {
     footer {
       padding: 0 12px;
     }
   }
-
+@media only screen and (max-width: 1180px) {
   footer h2 {
     font-size: 82px;
     font-weight: 300;
