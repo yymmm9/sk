@@ -1,3 +1,18 @@
+.overgrad{
+  background: linear-gradient(180deg, rgba(207, 230, 253, 0) 75%, #CFE6FD 95%);
+  mix-blend-mode: lighten;
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  pointer-events: none;
+}
+
+.vh{
+  height: 100vh;
+}
+
 button {
   -webkit-appearance: none;
 }
@@ -96,7 +111,7 @@ main {
 }
 
 .intro__des {
-  font-size: 3vw;
+  font-size: 2em;
   line-height: 1.5;
   text-align: left;
   font-family: "Baskerville", sans-serif;

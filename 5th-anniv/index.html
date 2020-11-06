@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" />
+
+	<title>Sia Karati | Homepage</title>
+
+   <link rel="manifest" href="../manifest.json">
+
+   <link rel="icon" type="image/png" href="/images/icons/icon-72x72.png" sizes="72x72" />
+    <link rel="icon" type="image/png" href="/images/icons/icon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/images/icons/icon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png" sizes="192x192" />
+
+	<link rel="stylesheet" href="/src/styles.css" />
+	<link rel="stylesheet" href="/src/main.css" />
+	<!-- <link rel="stylesheet" href="/src/debug.css" /> -->
+  <!-- <link rel="stylesheet" href="https://raw.githubusercontent.com/locomotivemtl/locomotive-scroll/master/dist/locomotive-scroll.css"> -->
+</head>
+
+<body data-scroll-container>
+	<header id="header"></header>
+
+	<div class="overlay" id="overlay"></div>
+
+  <svg xmlns='http://www.w3.org/2000/svg'>
+    <defs>
+        <filter id='noise'>
+            <feTurbulence type='fractalNoise' baseFrequency='0.4' />
+            <feColorMatrix type="saturate" values="0"/>
+        </filter>
+    </defs>
+</svg>
+
+  <div class="popup-container" id="popup">
+    <canvas height='1' id='confetti' width='1'></canvas>
+    <div class="popup-content">
+
+      <div class="fireworks-container">
+        <!-- <div class="filter--noise"></div> -->
+        <canvas class="fireworks"></canvas>
+      </div>
+      <h2 class="popup-title fifth-grad anim--rev">We are 5 years old now!</h2>
+
+      <img src="/images/5th/flask-min.png" class="popup-img anim--rev" alt="flask">
+
+      <div id="close-popup" class="cta txt continue anim--rev">Continue to site</div>
+    </div>
+  </div>
+
+  <style>
+    .fireworks-container{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 40;
+    }
+    .closed{
+      transition: all .5s ease-out;
+      opacity: 0;
+      pointer-events: none;
+      transfrom: translatey(50px);
+    }
+    .filter--noise{
+      /* filter: url(#noise);
+      background: transparent;
+      z-index: 1;
+      mix-blend-mode: overlay; */
+    }
+    .popup-img{
+      animation: reveal 1.5s ease;
+    }
+    .anim--rev{
+      animation: reveal .9s ease;
+    }
+
+    .txt.continue{
+      animation: reveal 1.7s ease;
+      padding: 10px 0;
+    }
+
+    @keyframes reveal{
+      0%{
+        opacity: 0;
+        transform: translatey(20px);
+      },
+      100%{
+        opacity: 1;
+        transform: translatey(0px);
+      }
+    }
+
+    .txt.continue{
+      position: relative;
+      margin-top: 24px;
+      z-index: 50;
+      text-decoration: underline;
+    }
+    .popup-container,#confetti{
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 11;
+    }
+
+    #confetti{
+      z-index: 12;
+      pointer-events: none;
+    }
+
+    .popup-content{
+      background: rgba(205, 225, 245, 0.5);
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+      /* max-width: 700px; */
+      width: 100%;
+      position: absolute;
+      top: 0;
+      /* width: calc(100% - 182px); */
+      height: 100%;
+      text-align: center;
+
+      padding: 54px 42px;
+    }
+
+    .popup-title{
+      font-size: 2.4em;
+    }
+
+    .fifth-grad{
+      background: -webkit-linear-gradient(-10deg, #BEFEFC 0%, #5FB0D3 17.05%, #409FE4 44.68%, #89F1FF 80.11%, #BEFAFE 96.64%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cta.txt{
+      color: #409FE4;
+      cursor: pointer;
+    }
+
+    .popup-content img{
+      width: 50%;
+      display: block;
+      /* max-width: 300px; */
+      height: auto;
+      margin: auto;
+      margin-top: 84px;
+      filter: hue-rotate(180deg);
+    }
+
+
+      .popup-img{
+        max-width: 400px;
+      }
+
+  </style>
+  
+
+	<main>
+		<div class="lenti par--2"></div>
+		<div class="lenti x3 par--1"></div>
+		<div class="lenti x3 par--2"></div>
+		<div class="home">
+			<div class="grid__item intro sixth">
+				<p class="intro__des">
+					SIA KARATI is a <i>"contemporary alchemy"</i> jewelry brand, founded
+            in 2015 by jewelry designer, creative director, contemporary artist
+            — <i>SIA Deng Pinyu</i>. Based in Shanghai currently.
+            <br /><br />Sia Deng studied and lived in Australia and Italy,
+            graduated from Istituto Marangoni of accessory design and luxury
+            goods, and jewelry design of contemporary arts. Her international
+            backgrounds in fashion and art, gave her
+            <i>multi-level aesthetics</i>, open design thinking and high
+            sensitivity to fashion industry under <i>different cultures</i>.
+          </p>
+        </div>
+
+        <div class="grid__item collections sixth">
+          <div class="collection__item _1 onhover rotatex">
+            <a href="/love-drug.html"
+              ><h2 class="collection__title">LOVE DRUG</h2>
+              <span class="collection__date">2015 FW</span>
+              <p class="collection__sd">
+                “Praying for love, cured by love, addicted to love, lost for
+                love, blind for love”
+              </p>
+            </a>
+          </div>
+
+          <div class="collection__item _2 onhover rotatex">
+            <a href="/the-cure.html"
+              ><h2 class="collection__title">THE CURE</h2>
+              <span class="collection__date">2016 SS</span>
+              <p class="collection__sd">
+                “Stay shine, you are your only cure”
+              </p></a
+            >
+          </div>
+
+          <div class="collection__item _3 onhover rotatex">
+            <a href="/essence.html"
+              ><h2 class="collection__title">ESSENCE</h2>
+              <span class="collection__date">2017 SS</span>
+              <p class="collection__sd">
+                “It won’t steal your thunder, but it’s still indispensable.”
+              </p></a
+            >
+          </div>
+
+          <div class="collection__item _4 onhover rotatex">
+            <a href="/erosion.html"
+              ><h2 class="collection__title">EROSION</h2>
+              <span class="collection__date">2017 FW</span>
+              <p class="collection__sd">
+                “Because of love we reformed each other.”
+              </p></a
+            >
+          </div>
+
+          <div class="collection__item _5 onhover rotatex">
+            <a href="/la-vie-de-barbie.html"
+              ><h2 class="collection__title">La Vie De Barbie</h2>
+              <span class="collection__date">2018 SS</span>
+              <p class="collection__sd">
+                “Embrace our inner child.”
+              </p></a
+            >
+          </div>
+
+          <div class="collection__item _6 onhover rotatex">
+            <a href="/cross-collaborations.html"
+              ><h2 class="collection__title">Cross-Collabs</h2>
+              <span class="collection__date">Now</span>
+              <p class="collection__sd">
+                “Connected through thoughts and imagination.”
+              </p></a
+            >
+          </div>
+          <div class="collection__item _7 onhover rotatex">
+            <a href="/discovery.html"
+              ><h2 class="collection__title">Disco-very</h2>
+              <span class="collection__date">2019 FW</span>
+              <p class="collection__sd">
+                “Follow the rhythm of disco music and shine the light of
+                discovery.”
+              </p></a
+            >
+          </div>
+
+          <div class="collection__item _8 onhover rotatex">
+            <a href="/marse-2020.html"
+              ><h2 class="collection__title" data-scroll data-scroll-delay="0">Marse-2020</h2>
+              <span class="collection__date" data-scroll data-scroll-delay="1">2020 New Year</span>
+              <p class="collection__sd" data-scroll data-scroll-delay="2">
+                “We are the voyagers of starship Marse-2020, our on going
+                mission is to explore strange new world.”
+              </p></a
+            >
+          </div>
+
+          <div class="collection__item _9 onhover rotatex">
+            <a href="/frontier.html"
+              ><h2 class="collection__title" data-scroll data-scroll-delay="0">Frontier</h2>
+              <span class="collection__date" data-scroll data-scroll-delay="1">2020 SS</span>
+              <p class="collection__sd" data-scroll data-scroll-delay="2">
+                “Let reality and consciousness connect at the frontier.”
+              </p></a
+            >
+          </div>
+
+          <div class="collection__item _10 onhover rotatex">
+            <a href="/poppy-love.html"
+              ><h2 class="collection__title" data-scroll data-scroll-delay="0">Poppy Love</h2>
+              <span class="collection__date" data-scroll data-scroll-delay="1">2020 SS</span>
+              <p class="collection__sd" data-scroll data-scroll-delay="2">
+                “You make me dizzy and addicted to love.”
+              </p></a
+            >
+          </div>
+        </div>
+
+        <footer class="sixth" id="footer"></footer>
+      </div>
+    </main>
+
+    <!-- <filter id="luminance" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+      <feColorMatrix type="luminanceToAlpha" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" result="colormatrix"/>
+    </filter>
+
+    <style>
+      .lenti{
+        filter: url(#luminance);
+      }
+    </style> -->
+
+    <script src="/src/essentials.js" async></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"
+      integrity="sha256-XDWrid8aGX+NZwSY7JzTu6oWArI71Sw+aUZ9Hd0P5mo="
+      crossorigin="anonymous"
+    ></script> -->
+
+    <script src="/src/index.js"></script>
+    <script src="/src/main.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/locomotivemtl/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+
+    <script>
+      const scroll = new LocomotiveScroll({
+          el: document.querySelector('[data-scroll-container]'),
+          smooth: true
+      });
+    </script> -->
+<script>
+  var retina = window.devicePixelRatio,
+
+    // Math shorthands
+    PI = Math.PI,
+    sqrt = Math.sqrt,
+    round = Math.round,
+    random = Math.random,
+    cos = Math.cos,
+    sin = Math.sin,
+
+    // Local WindowAnimationTiming interface
+    rAF = window.requestAnimationFrame,
+    cAF = window.cancelAnimationFrame || window.cancelRequestAnimationFrame,
+    _now = Date.now || function () {return new Date().getTime();};
+
+// Local WindowAnimationTiming interface polyfill
+(function (w) {
+  /**
+				* Fallback implementation.
+				*/
+  var prev = _now();
+  function fallback(fn) {
+    var curr = _now();
+    var ms = Math.max(0, 16 - (curr - prev));
+    var req = setTimeout(fn, ms);
+    prev = curr;
+    return req;
+  }
+
+  /**
+				* Cancel.
+				*/
+  var cancel = w.cancelAnimationFrame
+  || w.webkitCancelAnimationFrame
+  || w.clearTimeout;
+
+  rAF = w.requestAnimationFrame
+  || w.webkitRequestAnimationFrame
+  || fallback;
+
+  cAF = function(id){
+    cancel.call(w, id);
+  };
+}(window));
+
+document.addEventListener("DOMContentLoaded", function() {
+  var speed = 50,
+      duration = (1.0 / speed),
+      confettiRibbonCount = 11,
+      ribbonPaperCount = 20,
+      ribbonPaperDist = 3.0,
+      ribbonPaperThick = 7.0,
+      confettiPaperCount = 95,
+      DEG_TO_RAD = PI / 180,
+      RAD_TO_DEG = 180 / PI,
+      colors = [
+        ["#6FC3F4", "#85E9FD"],
+        ["#BEFAFE", "#85E9FD"],
+        ["#FFE8FC", "#E0BCDC"],
+        ["#F8E09C", "#D6B863"]
+      ];
+
+  function Vector2(_x, _y) {
+    this.x = _x, this.y = _y;
+    this.Length = function() {
+      return sqrt(this.SqrLength());
+    }
+    this.SqrLength = function() {
+      return this.x * this.x + this.y * this.y;
+    }
+    this.Add = function(_vec) {
+      this.x += _vec.x;
+      this.y += _vec.y;
+    }
+    this.Sub = function(_vec) {
+      this.x -= _vec.x;
+      this.y -= _vec.y;
+    }
+    this.Div = function(_f) {
+      this.x /= _f;
+      this.y /= _f;
+    }
+    this.Mul = function(_f) {
+      this.x *= _f;
+      this.y *= _f;
+    }
+    this.Normalize = function() {
+      var sqrLen = this.SqrLength();
+      if (sqrLen != 0) {
+        var factor = 1.0 / sqrt(sqrLen);
+        this.x *= factor;
+        this.y *= factor;
+      }
+    }
+    this.Normalized = function() {
+      var sqrLen = this.SqrLength();
+      if (sqrLen != 0) {
+        var factor = 1.0 / sqrt(sqrLen);
+        return new Vector2(this.x * factor, this.y * factor);
+      }
+      return new Vector2(0, 0);
+    }
+  }
+  Vector2.Lerp = function(_vec0, _vec1, _t) {
+    return new Vector2((_vec1.x - _vec0.x) * _t + _vec0.x, (_vec1.y - _vec0.y) * _t + _vec0.y);
+  }
+  Vector2.Distance = function(_vec0, _vec1) {
+    return sqrt(Vector2.SqrDistance(_vec0, _vec1));
+  }
+  Vector2.SqrDistance = function(_vec0, _vec1) {
+    var x = _vec0.x - _vec1.x;
+    var y = _vec0.y - _vec1.y;
+    return (x * x + y * y + z * z);
+  }
+  Vector2.Scale = function(_vec0, _vec1) {
+    return new Vector2(_vec0.x * _vec1.x, _vec0.y * _vec1.y);
+  }
+  Vector2.Min = function(_vec0, _vec1) {
+    return new Vector2(Math.min(_vec0.x, _vec1.x), Math.min(_vec0.y, _vec1.y));
+  }
+  Vector2.Max = function(_vec0, _vec1) {
+    return new Vector2(Math.max(_vec0.x, _vec1.x), Math.max(_vec0.y, _vec1.y));
+  }
+  Vector2.ClampMagnitude = function(_vec0, _len) {
+    var vecNorm = _vec0.Normalized;
+    return new Vector2(vecNorm.x * _len, vecNorm.y * _len);
+  }
+  Vector2.Sub = function(_vec0, _vec1) {
+    return new Vector2(_vec0.x - _vec1.x, _vec0.y - _vec1.y, _vec0.z - _vec1.z);
+  }
+
+  function EulerMass(_x, _y, _mass, _drag) {
+    this.position = new Vector2(_x, _y);
+    this.mass = _mass;
+    this.drag = _drag;
+    this.force = new Vector2(0, 0);
+    this.velocity = new Vector2(0, 0);
+    this.AddForce = function(_f) {
+      this.force.Add(_f);
+    }
+    this.Integrate = function(_dt) {
+      var acc = this.CurrentForce(this.position);
+      acc.Div(this.mass);
+      var posDelta = new Vector2(this.velocity.x, this.velocity.y);
+      posDelta.Mul(_dt);
+      this.position.Add(posDelta);
+      acc.Mul(_dt);
+      this.velocity.Add(acc);
+      this.force = new Vector2(0, 0);
+    }
+    this.CurrentForce = function(_pos, _vel) {
+      var totalForce = new Vector2(this.force.x, this.force.y);
+      var speed = this.velocity.Length();
+      var dragVel = new Vector2(this.velocity.x, this.velocity.y);
+      dragVel.Mul(this.drag * this.mass * speed);
+      totalForce.Sub(dragVel);
+      return totalForce;
+    }
+  }
+
+  function ConfettiPaper(_x, _y) {
+    this.pos = new Vector2(_x, _y);
+    this.rotationSpeed = (random() * 600 + 800);
+    this.angle = DEG_TO_RAD * random() * 360;
+    this.rotation = DEG_TO_RAD * random() * 360;
+    this.cosA = 1.0;
+    this.size = 5.0;
+    this.oscillationSpeed = (random() * 1.5 + 0.5);
+    this.xSpeed = 40.0;
+    this.ySpeed = (random() * 60 + 50.0);
+    this.corners = new Array();
+    this.time = random();
+    var ci = round(random() * (colors.length - 1));
+    this.frontColor = colors[ci][0];
+    this.backColor = colors[ci][1];
+    for (var i = 0; i < 4; i++) {
+      var dx = cos(this.angle + DEG_TO_RAD * (i * 90 + 45));
+      var dy = sin(this.angle + DEG_TO_RAD * (i * 90 + 45));
+      this.corners[i] = new Vector2(dx, dy);
+    }
+    this.Update = function(_dt) {
+      this.time += _dt;
+      this.rotation += this.rotationSpeed * _dt;
+      this.cosA = cos(DEG_TO_RAD * this.rotation);
+      this.pos.x += cos(this.time * this.oscillationSpeed) * this.xSpeed * _dt
+      this.pos.y += this.ySpeed * _dt;
+      if (this.pos.y > ConfettiPaper.bounds.y) {
+        this.pos.x = random() * ConfettiPaper.bounds.x;
+        this.pos.y = 0;
+      }
+    }
+    this.Draw = function(_g) {
+      if (this.cosA > 0) {
+        _g.fillStyle = this.frontColor;
+      } else {
+        _g.fillStyle = this.backColor;
+      }
+      _g.beginPath();
+      _g.moveTo((this.pos.x + this.corners[0].x * this.size) * retina, (this.pos.y + this.corners[0].y * this.size * this.cosA) * retina);
+      for (var i = 1; i < 4; i++) {
+        _g.lineTo((this.pos.x + this.corners[i].x * this.size) * retina, (this.pos.y + this.corners[i].y * this.size * this.cosA) * retina);
+      }
+      _g.closePath();
+      _g.fill();
+    }
+  }
+  ConfettiPaper.bounds = new Vector2(0, 0);
+
+  function ConfettiRibbon(_x, _y, _count, _dist, _thickness, _angle, _mass, _drag) {
+    this.particleDist = _dist;
+    this.particleCount = _count;
+    this.particleMass = _mass;
+    this.particleDrag = _drag;
+    this.particles = new Array();
+    var ci = round(random() * (colors.length - 1));
+    this.frontColor = colors[ci][0];
+    this.backColor = colors[ci][1];
+    this.xOff = (cos(DEG_TO_RAD * _angle) * _thickness);
+    this.yOff = (sin(DEG_TO_RAD * _angle) * _thickness);
+    this.position = new Vector2(_x, _y);
+    this.prevPosition = new Vector2(_x, _y);
+    this.velocityInherit = (random() * 2 + 4);
+    this.time = random() * 100;
+    this.oscillationSpeed = (random() * 2 + 2);
+    this.oscillationDistance = (random() * 40 + 40);
+    this.ySpeed = (random() * 40 + 80);
+    for (var i = 0; i < this.particleCount; i++) {
+      this.particles[i] = new EulerMass(_x, _y - i * this.particleDist, this.particleMass, this.particleDrag);
+    }
+    this.Update = function(_dt) {
+      var i = 0;
+      this.time += _dt * this.oscillationSpeed;
+      this.position.y += this.ySpeed * _dt;
+      this.position.x += cos(this.time) * this.oscillationDistance * _dt;
+      this.particles[0].position = this.position;
+      var dX = this.prevPosition.x - this.position.x;
+      var dY = this.prevPosition.y - this.position.y;
+      var delta = sqrt(dX * dX + dY * dY);
+      this.prevPosition = new Vector2(this.position.x, this.position.y);
+      for (i = 1; i < this.particleCount; i++) {
+        var dirP = Vector2.Sub(this.particles[i - 1].position, this.particles[i].position);
+        dirP.Normalize();
+        dirP.Mul((delta / _dt) * this.velocityInherit);
+        this.particles[i].AddForce(dirP);
+      }
+      for (i = 1; i < this.particleCount; i++) {
+        this.particles[i].Integrate(_dt);
+      }
+      for (i = 1; i < this.particleCount; i++) {
+        var rp2 = new Vector2(this.particles[i].position.x, this.particles[i].position.y);
+        rp2.Sub(this.particles[i - 1].position);
+        rp2.Normalize();
+        rp2.Mul(this.particleDist);
+        rp2.Add(this.particles[i - 1].position);
+        this.particles[i].position = rp2;
+      }
+      if (this.position.y > ConfettiRibbon.bounds.y + this.particleDist * this.particleCount) {
+        this.Reset();
+      }
+    }
+    this.Reset = function() {
+      this.position.y = -random() * ConfettiRibbon.bounds.y;
+      this.position.x = random() * ConfettiRibbon.bounds.x;
+      this.prevPosition = new Vector2(this.position.x, this.position.y);
+      this.velocityInherit = random() * 2 + 4;
+      this.time = random() * 100;
+      this.oscillationSpeed = random() * 2.0 + 1.5;
+      this.oscillationDistance = (random() * 40 + 40);
+      this.ySpeed = random() * 40 + 80;
+      var ci = round(random() * (colors.length - 1));
+      this.frontColor = colors[ci][0];
+      this.backColor = colors[ci][1];
+      this.particles = new Array();
+      for (var i = 0; i < this.particleCount; i++) {
+        this.particles[i] = new EulerMass(this.position.x, this.position.y - i * this.particleDist, this.particleMass, this.particleDrag);
+      }
+    }
+    this.Draw = function(_g) {
+      for (var i = 0; i < this.particleCount - 1; i++) {
+        var p0 = new Vector2(this.particles[i].position.x + this.xOff, this.particles[i].position.y + this.yOff);
+        var p1 = new Vector2(this.particles[i + 1].position.x + this.xOff, this.particles[i + 1].position.y + this.yOff);
+        if (this.Side(this.particles[i].position.x, this.particles[i].position.y, this.particles[i + 1].position.x, this.particles[i + 1].position.y, p1.x, p1.y) < 0) {
+          _g.fillStyle = this.frontColor;
+          _g.strokeStyle = this.frontColor;
+        } else {
+          _g.fillStyle = this.backColor;
+          _g.strokeStyle = this.backColor;
+        }
+        if (i == 0) {
+          _g.beginPath();
+          _g.moveTo(this.particles[i].position.x * retina, this.particles[i].position.y * retina);
+          _g.lineTo(this.particles[i + 1].position.x * retina, this.particles[i + 1].position.y * retina);
+          _g.lineTo(((this.particles[i + 1].position.x + p1.x) * 0.5) * retina, ((this.particles[i + 1].position.y + p1.y) * 0.5) * retina);
+          _g.closePath();
+          _g.stroke();
+          _g.fill();
+          _g.beginPath();
+          _g.moveTo(p1.x * retina, p1.y * retina);
+          _g.lineTo(p0.x * retina, p0.y * retina);
+          _g.lineTo(((this.particles[i + 1].position.x + p1.x) * 0.5) * retina, ((this.particles[i + 1].position.y + p1.y) * 0.5) * retina);
+          _g.closePath();
+          _g.stroke();
+          _g.fill();
+        } else if (i == this.particleCount - 2) {
+          _g.beginPath();
+          _g.moveTo(this.particles[i].position.x * retina, this.particles[i].position.y * retina);
+          _g.lineTo(this.particles[i + 1].position.x * retina, this.particles[i + 1].position.y * retina);
+          _g.lineTo(((this.particles[i].position.x + p0.x) * 0.5) * retina, ((this.particles[i].position.y + p0.y) * 0.5) * retina);
+          _g.closePath();
+          _g.stroke();
+          _g.fill();
+          _g.beginPath();
+          _g.moveTo(p1.x * retina, p1.y * retina);
+          _g.lineTo(p0.x * retina, p0.y * retina);
+          _g.lineTo(((this.particles[i].position.x + p0.x) * 0.5) * retina, ((this.particles[i].position.y + p0.y) * 0.5) * retina);
+          _g.closePath();
+          _g.stroke();
+          _g.fill();
+        } else {
+          _g.beginPath();
+          _g.moveTo(this.particles[i].position.x * retina, this.particles[i].position.y * retina);
+          _g.lineTo(this.particles[i + 1].position.x * retina, this.particles[i + 1].position.y * retina);
+          _g.lineTo(p1.x * retina, p1.y * retina);
+          _g.lineTo(p0.x * retina, p0.y * retina);
+          _g.closePath();
+          _g.stroke();
+          _g.fill();
+        }
+      }
+    }
+    this.Side = function(x1, y1, x2, y2, x3, y3) {
+      return ((x1 - x2) * (y3 - y2) - (y1 - y2) * (x3 - x2));
+    }
+  }
+  ConfettiRibbon.bounds = new Vector2(0, 0);
+  confetti = {};
+  confetti.Context = function(id) {
+    var i = 0;
+    var canvas = document.getElementById(id);
+    var canvasParent = canvas.parentNode;
+    var canvasWidth = canvasParent.offsetWidth;
+    var canvasHeight = canvasParent.offsetHeight;
+    canvas.width = canvasWidth * retina;
+    canvas.height = canvasHeight * retina;
+    var context = canvas.getContext('2d');
+    var interval = null;
+    var confettiRibbons = new Array();
+    ConfettiRibbon.bounds = new Vector2(canvasWidth, canvasHeight);
+    for (i = 0; i < confettiRibbonCount; i++) {
+      confettiRibbons[i] = new ConfettiRibbon(random() * canvasWidth, -random() * canvasHeight * 2, ribbonPaperCount, ribbonPaperDist, ribbonPaperThick, 45, 1, 0.05);
+    }
+    var confettiPapers = new Array();
+    ConfettiPaper.bounds = new Vector2(canvasWidth, canvasHeight);
+    for (i = 0; i < confettiPaperCount; i++) {
+      confettiPapers[i] = new ConfettiPaper(random() * canvasWidth, random() * canvasHeight);
+    }
+    this.resize = function() {
+      canvasWidth = canvasParent.offsetWidth;
+      canvasHeight = canvasParent.offsetHeight;
+      canvas.width = canvasWidth * retina;
+      canvas.height = canvasHeight * retina;
+      ConfettiPaper.bounds = new Vector2(canvasWidth, canvasHeight);
+      ConfettiRibbon.bounds = new Vector2(canvasWidth, canvasHeight);
+    }
+    this.start = function() {
+      this.stop()
+      var context = this;
+      this.update();
+    }
+    this.stop = function() {
+      cAF(this.interval);
+    }
+    this.update = function() {
+      var i = 0;
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      for (i = 0; i < confettiPaperCount; i++) {
+        confettiPapers[i].Update(duration);
+        confettiPapers[i].Draw(context);
+      }
+      for (i = 0; i < confettiRibbonCount; i++) {
+        confettiRibbons[i].Update(duration);
+        confettiRibbons[i].Draw(context);
+      }
+      this.interval = rAF(function() {
+        confetti.update();
+      });
+    }
+  }
+  var confetti = new confetti.Context('confetti');
+  confetti.start();
+  window.addEventListener('resize', function(event){
+    confetti.resize();
+  });
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script>
+    window.human = false;
+
+var canvasEl = document.querySelector('.fireworks');
+var ctx = canvasEl.getContext('2d');
+var numberOfParticules = 30;
+var pointerX = 0;
+var pointerY = 0;
+var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart' : 'mousedown';
+
+// var colors = ['#F8E09C', '#BEFAFE', '#85E9FD', '#6FC3F4'];
+var colors = ['#F8E09C', '#E5C56B', '#FFD850', '#FFF1A4'];
+
+function setCanvasSize() {
+  canvasEl.width = window.innerWidth * 2;
+  canvasEl.height = window.innerHeight * 2;
+  canvasEl.style.width = window.innerWidth + 'px';
+  canvasEl.style.height = window.innerHeight + 'px';
+  canvasEl.getContext('2d').scale(2, 2);
+}
+
+function updateCoords(e) {
+  pointerX = e.clientX || e.touches[0].clientX;
+  pointerY = e.clientY || e.touches[0].clientY;
+}
+
+function setParticuleDirection(p) {
+  var angle = anime.random(0, 360) * Math.PI / 180;
+  var value = anime.random(40, 90);
+  var radius = [-1, 1][anime.random(0, 1)] * value;
+  return {
+    x: p.x + radius * Math.cos(angle),
+    y: p.y + radius * Math.sin(angle)
+  }
+}
+
+function createParticule(x,y) {
+  var p = {};
+  p.x = x;
+  p.y = y;
+  p.color = colors[anime.random(0, colors.length - 1)];
+  p.radius = anime.random(5, 12);
+  //particle radius
+  p.endPos = setParticuleDirection(p);
+  p.draw = function() {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true);
+    ctx.fillStyle = p.color;
+    ctx.fill();
+  }
+  return p;
+}
+
+// function createCircle(x,y) {
+//   var p = {};
+//   p.x = x;
+//   p.y = y;
+//   p.color = '#FFF';
+//   p.radius = 0;
+//   p.alpha = .5;
+//   p.lineWidth = 6;
+//   p.draw = function() {
+//     ctx.globalAlpha = p.alpha;
+//     ctx.beginPath();
+//     ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true);
+//     ctx.lineWidth = p.lineWidth;
+//     ctx.strokeStyle = p.color;
+//     ctx.stroke();
+//     ctx.globalAlpha = 1;
+//   }
+//   return p;
+// }
+
+function renderParticule(anim) {
+  for (var i = 0; i < anim.animatables.length; i++) {
+    anim.animatables[i].target.draw();
+  }
+}
+
+function animateParticules(x, y) {
+  // var circle = createCircle(x, y);
+  var particules = [];
+  for (var i = 0; i < numberOfParticules; i++) {
+    particules.push(createParticule(x, y));
+  }
+  anime.timeline().add({
+    targets: particules,
+    x: function(p) { return p.endPos.x; },
+    y: function(p) { return p.endPos.y; },
+    radius: 0.2,
+    duration: anime.random(1200, 1600),
+    easing: 'easeOutExpo',
+    update: renderParticule
+  })
+  //   .add({
+  //   targets: circle,
+  //   radius: anime.random(80, 160),
+  //   lineWidth: 0,
+  //   alpha: {
+  //     value: 0,
+  //     easing: 'linear',
+  //     duration: anime.random(600, 800),  
+  //   },
+  //   duration: anime.random(1200, 1800),
+  //   easing: 'easeOutExpo',
+  //   update: renderParticule,
+  //   offset: 0
+  // });
+}
+
+var render = anime({
+  duration: Infinity,
+  update: function() {
+    ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+  }
+});
+
+document.addEventListener(tap, function(e) {
+  window.human = false;
+  render.play();
+  updateCoords(e);
+  animateParticules(pointerX, pointerY);
+}, false);
+
+var centerX = window.innerWidth / 2;
+var centerY = window.innerHeight / 2;
+
+function autoClick() {
+  if (window.human) return;
+  if (window.innerWidth < 425){
+    animateParticules(
+      anime.random(centerX-50, centerX+50), 
+      anime.random(centerY-100, centerY-0)
+    );
+  } else{
+    animateParticules(
+      anime.random(centerX-50, centerX+50), 
+      anime.random(centerY-200, centerY-100)
+    );
+  }
+  anime({duration: 400}).finished.then(autoClick);
+}
+
+autoClick();
+setCanvasSize();
+window.addEventListener('resize', setCanvasSize, false);
+  </script>
+    <script></script>
+    
+  </body>
+</html>
