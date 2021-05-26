@@ -1,15 +1,15 @@
-.overgrad{
-  background: linear-gradient(180deg, rgba(207, 230, 253, 0) 75%, #CFE6FD 95%);
+.overgrad {
+  background: linear-gradient(180deg, rgba(207, 230, 253, 0) 75%, #cfe6fd 95%);
   mix-blend-mode: lighten;
   position: fixed;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   pointer-events: none;
 }
 
-.vh{
+.vh {
   height: 100vh;
 }
 
@@ -287,6 +287,12 @@ main {
 
 ._10::before {
   background: url("/mat/home/pg/t8.png");
+  background-size: 100% auto;
+  background-position: 0% 68%;
+}
+
+._11::before {
+  background: url("/mat/home/pg/t11.png");
   background-size: 100% auto;
   background-position: 0% 68%;
 }

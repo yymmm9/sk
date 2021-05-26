@@ -1,48 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="minimal-ui, width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes"
+    />
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="format-detection" content="telephone=no" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" />
+    <title>Sia Karati | Homepage</title>
 
-	<title>Sia Karati | Homepage</title>
+    <link rel="manifest" href="../manifest.json" />
 
-   <link rel="manifest" href="../manifest.json">
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/icons/icon-72x72.png"
+      sizes="72x72"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/icons/icon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/icons/icon-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/images/icons/icon-192x192.png"
+      sizes="192x192"
+    />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8P8CHKC10T"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-   <link rel="icon" type="image/png" href="/images/icons/icon-72x72.png" sizes="72x72" />
-    <link rel="icon" type="image/png" href="/images/icons/icon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="/images/icons/icon-192x192.png" sizes="192x192" />
-    <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png" sizes="192x192" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8P8CHKC10T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      gtag("config", "G-8P8CHKC10T");
+    </script>
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/main.css" />
+    <!-- <link rel="stylesheet" href="/src/debug.css" /> -->
+    <!-- <link rel="stylesheet" href="https://raw.githubusercontent.com/locomotivemtl/locomotive-scroll/master/dist/locomotive-scroll.css"> -->
+  </head>
 
-  gtag('config', 'G-8P8CHKC10T');
-</script>
-	<link rel="stylesheet" href="./src/styles.css" />
-	<link rel="stylesheet" href="./src/main.css" />
-	<!-- <link rel="stylesheet" href="/src/debug.css" /> -->
-  <!-- <link rel="stylesheet" href="https://raw.githubusercontent.com/locomotivemtl/locomotive-scroll/master/dist/locomotive-scroll.css"> -->
-</head>
+  <body data-scroll-container>
+    <header id="header"></header>
 
-<body data-scroll-container>
-	<header id="header"></header>
+    <div class="overlay" id="overlay"></div>
 
-	<div class="overlay" id="overlay"></div>
-
-	<main>
-		<div class="lenti par--2"></div>
-		<div class="lenti x3 par--1"></div>
-		<div class="lenti x3 par--2"></div>
-		<div class="home">
-			<div class="grid__item intro sixth">
-				<p class="intro__des">
-					SIA KARATI is a <i>"contemporary alchemy"</i> jewelry brand, founded
+    <main>
+      <div class="lenti par--2"></div>
+      <div class="lenti x3 par--1"></div>
+      <div class="lenti x3 par--2"></div>
+      <div class="home">
+        <div class="grid__item intro sixth">
+          <p class="intro__des">
+            SIA KARATI is a <i>"contemporary alchemy"</i> jewelry brand, founded
             in 2015 by jewelry designer, creative director, contemporary artist
             — <i>SIA Deng Pinyu</i>. Based in Shanghai currently.
             <br /><br />Sia Deng studied and lived in Australia and Italy,
@@ -100,9 +126,7 @@
             <a href="./la-vie-de-barbie.html"
               ><h2 class="collection__title">La Vie De Barbie</h2>
               <span class="collection__date">2018 SS</span>
-              <p class="collection__sd">
-                “Embrace our inner child.”
-              </p></a
+              <p class="collection__sd">“Embrace our inner child.”</p></a
             >
           </div>
 
@@ -128,8 +152,12 @@
 
           <div class="collection__item _8 onhover rotatex">
             <a href="./marse-2020.html"
-              ><h2 class="collection__title" data-scroll data-scroll-delay="0">Marse-2020</h2>
-              <span class="collection__date" data-scroll data-scroll-delay="1">2020 New Year</span>
+              ><h2 class="collection__title" data-scroll data-scroll-delay="0">
+                Marse-2020
+              </h2>
+              <span class="collection__date" data-scroll data-scroll-delay="1"
+                >2020 New Year</span
+              >
               <p class="collection__sd" data-scroll data-scroll-delay="2">
                 “We are the voyagers of starship Marse-2020, our on going
                 mission is to explore strange new world.”
@@ -139,8 +167,12 @@
 
           <div class="collection__item _9 onhover rotatex">
             <a href="./frontier.html"
-              ><h2 class="collection__title" data-scroll data-scroll-delay="0">Frontier</h2>
-              <span class="collection__date" data-scroll data-scroll-delay="1">2020 SS</span>
+              ><h2 class="collection__title" data-scroll data-scroll-delay="0">
+                Frontier
+              </h2>
+              <span class="collection__date" data-scroll data-scroll-delay="1"
+                >2020 SS</span
+              >
               <p class="collection__sd" data-scroll data-scroll-delay="2">
                 “Let reality and consciousness connect at the frontier.”
               </p></a
@@ -149,12 +181,28 @@
 
           <div class="collection__item _10 onhover rotatex">
             <a href="./poppy-love.html"
-              ><h2 class="collection__title" data-scroll data-scroll-delay="0">Poppy Love</h2>
-              <span class="collection__date" data-scroll data-scroll-delay="1">2020 SS</span>
+              ><h2 class="collection__title" data-scroll data-scroll-delay="0">
+                Poppy Love
+              </h2>
+              <span class="collection__date" data-scroll data-scroll-delay="1"
+                >2020 SS</span
+              >
               <p class="collection__sd" data-scroll data-scroll-delay="2">
                 “You make me dizzy and addicted to love.”
               </p></a
             >
+          </div>
+
+          <div class="collection__item _11 onhover rotatex">
+            <a href="./designer-cut.html"
+              ><h2 class="collection__title" data-scroll data-scroll-delay="0">
+                Designer Cut
+              </h2>
+              <span class="collection__date" data-scroll data-scroll-delay="1"
+                >2020 FW</span
+              >
+              <p class="collection__sd" data-scroll data-scroll-delay="2"></p
+            ></a>
           </div>
         </div>
 
@@ -192,6 +240,5 @@
       });
     </script> -->
     <script></script>
-    
   </body>
 </html>
